@@ -14,7 +14,7 @@
 	<div class="container">
 		<div class="login">
 
-			<form action="" method="">
+			<form action="LoginServlet" method="POST">
 				<div class="form-group">
 					<label for="email">E-Mail-Addresse</label> <input type="email"
 						class="form-control" id="exampleInputEmail1"

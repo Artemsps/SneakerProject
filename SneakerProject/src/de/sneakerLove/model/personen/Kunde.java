@@ -12,13 +12,20 @@ public class Kunde extends Person {
 		super(vorname, nachname, benutzername, passwort);
 	}
 
-	public Kunde(String vorname, String nachname, String benutzername, String passwort, String email, int alter,
+	public Kunde(String vorname, String nachname, String nutzername, String passwort, String email, int alter,
 			Adresse adresse, Bankverbindung bankverbindung) {
-		super(vorname, nachname, benutzername, passwort);
+		super(vorname, nachname, nutzername, passwort);
 		this.email = email;
 		this.alter = alter;
 		this.adresse = adresse;
 		this.bankverbindung = bankverbindung;
+	}
+
+	public Kunde(String vorname, String nachname, String nutzername, String passwort, String email, int alter) {
+		super(vorname, nachname, nutzername, passwort);
+		this.email = email;
+		this.alter = alter;
+
 	}
 
 	public int getKundenId() {
