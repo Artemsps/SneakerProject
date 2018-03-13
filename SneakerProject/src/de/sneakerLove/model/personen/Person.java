@@ -4,13 +4,13 @@ public abstract class Person {
 
 	private String vorname;
 	private String nachname;
-	private String benutzername;
+	private String nutzername;
 	private String passwort;
 
 	public Person(String vorname, String nachname, String benutzername, String passwort) {
 		this.vorname = vorname;
 		this.nachname = nachname;
-		this.benutzername = benutzername;
+		this.nutzername = benutzername;
 		this.passwort = passwort;
 	}
 
@@ -22,8 +22,8 @@ public abstract class Person {
 		return nachname;
 	}
 
-	public String getBenutzername() {
-		return benutzername;
+	public String getNutzername() {
+		return nutzername;
 	}
 
 	public String getPasswort() {

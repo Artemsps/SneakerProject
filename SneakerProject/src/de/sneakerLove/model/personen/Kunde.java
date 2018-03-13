@@ -2,25 +2,31 @@ package de.sneakerLove.model.personen;
 
 public class Kunde extends Person {
 
-	private int kundenId;
+	private int kundeId;
+	private String email;
 	private int alter;
 	private Adresse adresse;
 	private Bankverbindung bankverbindung;
 
-	public Kunde(String vorname, String nachname, String benutzername, String passwort) {
+	public Kunde(String email, String vorname, String nachname, String benutzername, String passwort) {
 		super(vorname, nachname, benutzername, passwort);
 	}
 
-	public Kunde(String vorname, String nachname, String benutzername, String passwort, int alter, Adresse adresse,
-			Bankverbindung bankverbindung) {
+	public Kunde(String vorname, String nachname, String benutzername, String passwort, String email, int alter,
+			Adresse adresse, Bankverbindung bankverbindung) {
 		super(vorname, nachname, benutzername, passwort);
+		this.email = email;
 		this.alter = alter;
 		this.adresse = adresse;
 		this.bankverbindung = bankverbindung;
 	}
 
 	public int getKundenId() {
-		return kundenId;
+		return kundeId;
+	}
+
+	public String getEmail() {
+		return email;
 	}
 
 	public int getAlter() {
