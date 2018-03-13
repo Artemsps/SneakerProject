@@ -10,6 +10,7 @@
 <link href="css/main-header-style.css" rel="stylesheet">
 </head>
 <body>
+	<jsp:include page="navbar.jsp"></jsp:include>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5  toppad  pull-right col-md-offset-3 ">

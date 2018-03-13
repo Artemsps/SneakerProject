@@ -14,38 +14,8 @@
 </style>
 </head>
 <body>
+	<jsp:include page="navbar.jsp"></jsp:include>
 	<div class="container-fluid">
-		<nav class="navbar navbar-inverse">
-			<div class="container-fluid">
-				<!-- Titel und Schalter werden für eine bessere mobile Ansicht zusammengefasst -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed"
-						data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-						aria-expanded="false">
-						<span class="sr-only">Navigation ein-/ausblenden</span> <span
-							class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
-				</div>
-				<!-- Alle Navigationslinks, Formulare und anderer Inhalt werden hier zusammengefasst und können dann ein- und ausgeblendet werden -->
-				<div class="collapse navbar-collapse"
-					id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li><a href="#">Impressum</a></li>
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="profil.jsp">Profil</a></li>
-						<li><a href="login.jsp">Login</a></li>
-
-					</ul>
-				</div>
-				<!-- /.navbar-collapse -->
-			</div>
-			<!-- /.container-fluid -->
-		</nav>
-		<div>
-			<br /> <br />
-		</div>
 		<div class="jumbotron">
 			<h1>Sneaker Shop!</h1>
 			<p>Hier finden Sie die neuesten Sneaker und mehr!</p>

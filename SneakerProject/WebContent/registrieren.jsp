@@ -11,6 +11,7 @@
 <link href="css/regist.css" rel="stylesheet">
 </head>
 <body>
+	<jsp:include page="navbar.jsp"></jsp:include>
 	<div class="container">
 		<div class="row main">
 			<div class="panel-heading">
