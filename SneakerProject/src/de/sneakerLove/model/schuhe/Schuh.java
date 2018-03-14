@@ -2,20 +2,16 @@ package de.sneakerLove.model.schuhe;
 
 public abstract class Schuh {
 
-	private int schuhId;
 	private String modell;
-	private int anzahl;
 	private double groesse;
+	private int anzahl;
+	private double preis;
 
-	public Schuh(int schuhId, String modell, int anzahl, double groesse) {
-		this.schuhId = schuhId;
+	public Schuh(String modell, double groesse, int anzahl, double preis) {
 		this.modell = modell;
 		this.anzahl = anzahl;
 		this.groesse = groesse;
-	}
-
-	public int getSchuhId() {
-		return schuhId;
+		this.preis = preis;
 	}
 
 	public String getModell() {

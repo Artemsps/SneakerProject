@@ -2,8 +2,13 @@ package de.sneakerLove.model.schuhe;
 
 public class Asics extends Schuh {
 
-	public Asics(int schuhId, String modell, int anzahl, double groesse) {
-		super(schuhId, modell, anzahl, groesse);
+	private int asicsId;
+
+	public Asics(String modell, double groesse, int anzahl, double preis) {
+		super(modell, groesse, anzahl, preis);
 	}
 
+	public int getAsicsId() {
+		return asicsId;
+	}
 }
