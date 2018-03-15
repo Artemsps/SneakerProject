@@ -27,6 +27,14 @@
 				</div>
 				<button type="submit" class="btn btn-primary">Anmelden</button>
 			</form>
+			<br />
+			<hr />
+			<br />
+			<form action="TestServlet" method="GET">
+				<button type="submit" class="btn btn-primary">TestServlet
+					starten</button>
+
+			</form>
 		</div>
 	</div>
 </body>

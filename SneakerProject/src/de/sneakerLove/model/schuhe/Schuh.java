@@ -26,4 +26,7 @@ public abstract class Schuh {
 		return groesse;
 	}
 
+	public double getPreis() {
+		return preis;
+	}
 }

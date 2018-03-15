@@ -11,5 +11,4 @@ public class Adidas extends Schuh {
 	public int getAdidasId() {
 		return adidasId;
 	}
-
 }
