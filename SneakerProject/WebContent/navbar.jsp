@@ -29,12 +29,14 @@
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li><a href="#">Impressum</a></li>
+						<li><a href="${profilLink}">Profil</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-center">
 						<li><a href="index.jsp"><strong>SNEAKERLOVE</strong></a>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="${profilLink}">Profil</a></li>
+						<li><a href="starteTest.jsp">Test</a></li>
+						<li><a href="registrieren.jsp">Registrieren</a></li>
 						<li><a href="login.jsp">Login</a></li>
 						<li>
 							<form action="LoginServlet" method="GET">

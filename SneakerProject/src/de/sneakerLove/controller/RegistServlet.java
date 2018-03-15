@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import de.sneakerLove.controller.util.KundenUtil;
 import de.sneakerLove.model.personen.Kunde;
@@ -48,9 +49,9 @@ public class RegistServlet extends HttpServlet {
 		try {
 			if (checkPasswort(passwort, confirm)) {
 				Kunde kunde = new Kunde(vorname, nachname, nutzername, passwort, email, alter2);
-
+				HttpSession session = request.getSession();
 				kundenUtil.kundeHinzufuegen(kunde);
-				request.setAttribute("LOGIN_KUNDE", kunde);
+				session.setAttribute("LOGIN_KUNDE", kunde);
 				request.getRequestDispatcher("profil.jsp").forward(request, response);
 			} else {
 				System.out.println("Passwort leer oder stimmt nicht überein.");
