@@ -1,10 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Login Fenster</title>
 <!-- Bootstrap -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/login.css" rel="stylesheet">
@@ -18,22 +16,14 @@
 				<div class="form-group">
 					<label for="email">E-Mail-Addresse</label> <input type="email"
 						class="form-control" id="exampleInputEmail1"
-						aria-describedby="emailHelp" placeholder="Email">
+						aria-describedby="emailHelp" placeholder="Email" name="email">
 				</div>
 				<div class="form-group">
 					<label for="exampleInputPassword1">Password</label> <input
 						type="password" class="form-control" id="exampleInputPassword1"
-						placeholder="Passwort">
+						placeholder="Passwort" name="passwort">
 				</div>
 				<button type="submit" class="btn btn-primary">Anmelden</button>
-			</form>
-			<br />
-			<hr />
-			<br />
-			<form action="TestServlet" method="GET">
-				<button type="submit" class="btn btn-primary">TestServlet
-					starten</button>
-
 			</form>
 		</div>
 	</div>

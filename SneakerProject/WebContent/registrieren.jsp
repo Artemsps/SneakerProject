@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,8 +19,9 @@
 				</div>
 			</div>
 			<div class="main-login main-center">
+			${ERRORTEXT}
 				<form class="form-horizontal" method="POST"
-					action="RegistrierenServlet">
+					action="RegistServlet">
 
 					<div class="form-group">
 						<label for="vorname" class="cols-sm-2 control-label">Dein
@@ -72,7 +71,17 @@
 							</div>
 						</div>
 					</div>
-
+					<div class="form-group">
+						<label for="alter" class="cols-sm-2 control-label">Alter</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-users fa"
+									aria-hidden="true"></i></span> <input type="text" class="form-control"
+									name="alter" id="alter"
+									placeholder="Gib dein Alter ein" />
+							</div>
+						</div>
+					</div>
 					<div class="form-group">
 						<label for="password" class="cols-sm-2 control-label">Passwort</label>
 						<div class="cols-sm-10">
@@ -87,7 +96,7 @@
 
 					<div class="form-group">
 						<label for="confirm" class="cols-sm-2 control-label">Passwort
-							best√§tigen</label>
+							best‰tigen</label>
 						<div class="cols-sm-10">
 							<div class="input-group">
 								<span class="input-group-addon"><i

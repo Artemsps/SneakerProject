@@ -1,10 +1,11 @@
 package de.sneakerLove.controller.util;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import de.sneakerLove.database.DatabaseConnection;
 import de.sneakerLove.model.personen.Kunde;
@@ -12,9 +13,9 @@ import de.sneakerLove.model.personen.Kunde;
 public class KundenUtil {
 	private static final String SELECT_ALL = "SELECT * FROM kunden ORDER BY kundeId ASC";
 
-	public Set<Kunde> getAlleKunden() throws Exception {
+	public List<Kunde> getAlleKunden() throws Exception {
 
-		Set<Kunde> kundenliste = new HashSet<>();
+		List<Kunde> kundenliste = new ArrayList<>();
 
 		Connection myConn = null;
 		Statement myStmt = null;
@@ -70,6 +71,72 @@ public class KundenUtil {
 
 			// Alle erstellten JDBC objekte löschen (Methodenaufruf)
 			close(myConn, myStmt, myRs);
+		}
+	}
+
+	public void kundeHinzufuegen(Kunde kunde) throws Exception {
+
+		Connection myConn = null;
+		PreparedStatement myStmt = null;
+
+		try {
+			// Datenbankverbindung aufbauen
+			myConn = DatabaseConnection.getConnection();
+
+			// einen SQL Statement erstellen
+			String sql = "INSERT INTO kunden (vorname, nachname, nutzername, passwort, email, alter) "
+					+ "VALUES (?, ?, ?, ?, ?, ?)";
+
+			myStmt = myConn.prepareStatement(sql);
+
+			// Die Parameter für den neuen Benutzer erstellen - SQL
+			myStmt.setString(1, kunde.getVorname());
+			myStmt.setString(2, kunde.getNachname());
+			myStmt.setString(3, kunde.getNutzername());
+			myStmt.setString(4, kunde.getPasswort());
+			myStmt.setString(5, kunde.getEmail());
+			myStmt.setInt(6, kunde.getAlter());
+
+			// SQL Statement ausführen
+			myStmt.execute();
+// TODO
+// // Adresse
+// String sql2 = "INSERT INTO adressen " + "(idKunde, strasse, ort, plz) "
+// + "VALUES (@idKunde:= LAST_INSERT_ID(), ?, ?, ?)";
+//
+// myStmt2 = myConn.prepareStatement(sql2);
+//
+// myStmt2.setString(1, kunde.getAdresse().getStrasse());
+// myStmt2.setString(2, kunde.getAdresse().getOrt());
+// myStmt2.setInt(3, kunde.getAdresse().getPlz());
+//
+// myStmt2.execute();
+//
+// // Zahlungsdaten
+// String sql3 = "INSERT INTO zahlungsdaten (idKunde, bankinstitut, iban, bic) "
+// + "VALUES (@idKunde, ?, ?, ?)";
+//
+// myStmt3 = myConn.prepareStatement(sql3);
+//
+// myStmt3.setString(1, kunde.getZahlungsdaten().getBankinstitut());
+// myStmt3.setString(2, kunde.getZahlungsdaten().getIban());
+// myStmt3.setString(3, kunde.getZahlungsdaten().getBic());
+//
+// myStmt3.execute();
+//
+// // Warenkorb
+// String sql4 = "INSERT INTO warenkorb (idKunde) VALUES (@idKunde)";
+//
+// myStmt4 = myConn.prepareStatement(sql4);
+// myStmt4.execute();
+
+		} finally {
+
+			// Alle erstellten JDBC objekte löschen
+			close(myConn, myStmt, null);
+// myStmt2.close();
+// myStmt3.close();
+// myStmt4.close();
 		}
 	}
 

@@ -1,10 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Profil</title>
 <!-- Bootstrap -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/main-header-style.css" rel="stylesheet">
@@ -23,7 +21,7 @@
 
 				<div class="panel panel-info">
 					<div class="panel-heading">
-						<h3 class="panel-title">${KUNDE.vorname}${KUNDE.nachname}</h3>
+						<h3 class="panel-title">${LOGIN_KUNDE.nutzername}</h3>
 					</div>
 					<div class="panel-body">
 						<div class="row">
@@ -32,34 +30,32 @@
 									<tbody>
 										<tr>
 											<td>Vorname:</td>
-											<td>Programming</td>
+											<td>${LOGIN_KUNDE.vorname}</td>
 										</tr>
 										<tr>
 											<td>Nachname:</td>
-											<td>06/23/2013</td>
+											<td>${LOGIN_KUNDE.nachname}</td>
 										</tr>
 										<tr>
 											<td>Date of Birth</td>
-											<td>01/24/1988</td>
-										</tr>
-
-										<tr>
-										<tr>
-											<td>Gender</td>
-											<td>Female</td>
+											<td>${LOGIN_KUNDE.alter}</td>
 										</tr>
 										<tr>
-											<td>Home Address</td>
-											<td>Kathmandu,Nepal</td>
+										<tr>
+											<td>Straﬂe</td>
+											<td>Lorem Ipsum</td>
+										</tr>
+										<tr>
+											<td>Hausnummer</td>
+											<td>Lorem Ipsum</td>
+										</tr>
+										<tr>
+											<td>PLZ und Stadt</td>
+											<td>Lorem Ipsum</td>
 										</tr>
 										<tr>
 											<td>Email</td>
-											<td><a href="mailto:info@support.com">info@support.com</a></td>
-										</tr>
-										<tr>
-										<td>Phone Number</td>
-										<td>123-4567-890(Landline)<br> <br>555-4567-890(Mobile)
-										</td>
+											<td><a href="mailto:${LOGIN_KUNDE.email}">${LOGIN_KUNDE.email}</a></td>
 										</tr>
 									</tbody>
 								</table>

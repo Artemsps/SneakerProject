@@ -9,8 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import de.sneakerLove.controller.util.KundenUtil;
 import de.sneakerLove.controller.util.SchuhUtil;
 import de.sneakerLove.controller.util.SchuhUtil.Marke;
+import de.sneakerLove.model.personen.Kunde;
 import de.sneakerLove.model.schuhe.Schuh;
 
 /**
@@ -21,6 +23,7 @@ public class TestServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private final SchuhUtil schuhUtil = new SchuhUtil();
+	private final KundenUtil kundenUtil = new KundenUtil();
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -39,7 +42,10 @@ public class TestServlet extends HttpServlet {
 			throws ServletException, IOException {
 		try {
 			List<Schuh> schuhliste = schuhUtil.getAlleSchuheVon(Marke.TIMBERLAND);
+			List<Kunde> kundenliste = kundenUtil.getAlleKunden();
+
 			request.setAttribute("SCHUHLISTE", schuhliste);
+			request.setAttribute("KUNDENLISTE", kundenliste);
 			request.getRequestDispatcher("test.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();

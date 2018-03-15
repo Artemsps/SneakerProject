@@ -8,8 +8,8 @@ public class Kunde extends Person {
 	private Adresse adresse;
 	private Bankverbindung bankverbindung;
 
-	public Kunde(String email, String vorname, String nachname, String benutzername, String passwort) {
-		super(vorname, nachname, benutzername, passwort);
+	public Kunde(String email, String vorname, String nachname, String nutzername, String passwort) {
+		super(vorname, nachname, nutzername, passwort);
 	}
 
 	public Kunde(String vorname, String nachname, String nutzername, String passwort, String email, int alter,
