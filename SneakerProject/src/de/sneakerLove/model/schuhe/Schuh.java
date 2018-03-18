@@ -29,4 +29,10 @@ public abstract class Schuh {
 	public double getPreis() {
 		return preis;
 	}
+
+	@Override
+	public String toString() {
+		return "Schuh [modell=" + modell + ", groesse=" + groesse + ", anzahl=" + anzahl + ", preis=" + preis + "]";
+	}
+
 }

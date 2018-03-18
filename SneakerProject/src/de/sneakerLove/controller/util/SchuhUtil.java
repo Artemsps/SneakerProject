@@ -50,27 +50,28 @@ public class SchuhUtil {
 				groesse = myRs.getDouble(GROESSE);
 				anzahl = myRs.getInt(ANZAHL);
 				preis = myRs.getDouble(PREIS);
-			}
 
-			switch (marke) {
-			case ADIDAS:
-				Adidas adidas = new Adidas(modell, groesse, anzahl, preis);
-				schuhliste.add(adidas);
-				break;
-			case ASICS:
-				Asics asics = new Asics(modell, groesse, anzahl, preis);
-				schuhliste.add(asics);
-				break;
-			case NIKE:
-				Nike nike = new Nike(modell, groesse, anzahl, preis);
-				schuhliste.add(nike);
-				break;
-			case TIMBERLAND:
-				Timberland timberland = new Timberland(modell, groesse, anzahl, preis);
-				schuhliste.add(timberland);
-				break;
-			default:
-				break;
+				switch (marke) {
+				case ADIDAS:
+					Adidas adidas = new Adidas(modell, groesse, anzahl, preis);
+					schuhliste.add(adidas);
+					break;
+				case ASICS:
+					Asics asics = new Asics(modell, groesse, anzahl, preis);
+					schuhliste.add(asics);
+					break;
+				case NIKE:
+					Nike nike = new Nike(modell, groesse, anzahl, preis);
+					schuhliste.add(nike);
+					break;
+				case TIMBERLAND:
+					Timberland timberland = new Timberland(modell, groesse, anzahl, preis);
+					schuhliste.add(timberland);
+					break;
+				default:
+					break;
+				}
+
 			}
 
 			// Schuh Array zurückgeben

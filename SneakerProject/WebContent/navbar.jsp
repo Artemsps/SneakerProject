@@ -3,13 +3,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
 <!-- Bootstrap -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/main-header-style.css" rel="stylesheet">
 <link href="css/navbar.css" rel="stylesheet">
 </head>
 <body>
+
 	<c:url var="profilLink" value="ProfilServlet" />
 	<div class="container-fluid">
 		<nav class="navbar navbar-inverse">
