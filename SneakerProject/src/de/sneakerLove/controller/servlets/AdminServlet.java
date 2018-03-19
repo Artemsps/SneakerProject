@@ -1,4 +1,4 @@
-package de.sneakerLove.controller;
+package de.sneakerLove.controller.servlets;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

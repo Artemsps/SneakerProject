@@ -1,4 +1,4 @@
-package de.sneakerLove.controller;
+package de.sneakerLove.controller.servlets;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,23 +9,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import de.sneakerLove.controller.util.KundenUtil;
 import de.sneakerLove.controller.util.SchuhUtil;
 import de.sneakerLove.controller.util.SchuhUtil.Marke;
+import de.sneakerLove.model.personen.Kunde;
 import de.sneakerLove.model.schuhe.Schuh;
 
 /**
  * Servlet implementation class TestServlet
  */
-@WebServlet("/ProduktServlet")
-public class ProduktServlet extends HttpServlet {
+@WebServlet("/TestServlet")
+public class TestServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private final SchuhUtil schuhUtil = new SchuhUtil();
+	private final KundenUtil kundenUtil = new KundenUtil();
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public ProduktServlet() {
+	public TestServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -39,9 +42,11 @@ public class ProduktServlet extends HttpServlet {
 			throws ServletException, IOException {
 		try {
 			List<Schuh> schuhliste = schuhUtil.getAlleSchuheVon(Marke.TIMBERLAND);
-			System.out.println(schuhliste.toString());
+			List<Kunde> kundenliste = kundenUtil.getAlleKunden();
+
 			request.setAttribute("SCHUHLISTE", schuhliste);
-			request.getRequestDispatcher("index.jsp").forward(request, response);
+			request.setAttribute("KUNDENLISTE", kundenliste);
+			request.getRequestDispatcher("test.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
