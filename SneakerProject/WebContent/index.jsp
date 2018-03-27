@@ -79,7 +79,21 @@
 					<div class="panel-body">Panel-Inhalt</div>
 				</div>
 			</div>
+			
+			<form action="WarenkorbServlet" method="GET">
+			
 			<c:forEach items="${SCHUHLISTE}" var="schuh">
+			
+			
+			<input type="hidden" name="schuhid" value="${ schuh.schuhid }">
+
+				<c:url var="warenkorbHinzuLink" value="WarenkorbServlet">
+					<c:param name="command" value="HINZUFUEGEN_IN_WARENKORB" />
+					<c:param name="schuhid" value="${ schuh.schuhid }" />
+				
+				</c:url>
+			
+			
 				<div class="col-sm-6 col-md-2">
 					<div class="thumbnail">
 						<img src="img/platzhalter.png"
@@ -90,11 +104,13 @@
 							<p>Preis: ${schuh.preis} EUR</p>
 							<p>
 								<a href="#" class="btn btn-right btn-default" role="button">Ansehen</a>
+								<a href="#" class="btn btn-right btn-default" role="button">In den Warenkorb legen</a>
 							</p>
 						</div>
 					</div>
 				</div>
 			</c:forEach>
+			</form>
 		</div>
 
 

@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import de.sneakerLove.controller.util.KundenUtil;
 import de.sneakerLove.controller.util.SchuhUtil;
 import de.sneakerLove.model.personen.Kunde;
-import de.sneakerLove.model.schuhe.Marke;
 import de.sneakerLove.model.schuhe.Schuh;
 
 /**
@@ -41,7 +40,7 @@ public class TestServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
-			List<Schuh> schuhliste = schuhUtil.getAlleSchuhe(Marke.TIMBERLAND);
+			List<Schuh> schuhliste = schuhUtil.getAlleSchuhe();
 			List<Kunde> kundenliste = kundenUtil.getAlleKunden();
 
 			request.setAttribute("SCHUHLISTE", schuhliste);

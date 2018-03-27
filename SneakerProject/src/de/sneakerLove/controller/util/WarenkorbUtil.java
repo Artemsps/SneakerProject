@@ -74,7 +74,7 @@ public class WarenkorbUtil {
 			myStmt = myConn.prepareStatement(sql);
 
 			// Die Parameter für den neuen Benutzer erstellen - SQL
-			myStmt.setInt(1, schuh.getSchuhId());
+			myStmt.setInt(1, schuh.getSchuhid());
 			myStmt.setInt(2, warenkorb.getWarenkorbId());
 
 			// SQL Statement ausführen

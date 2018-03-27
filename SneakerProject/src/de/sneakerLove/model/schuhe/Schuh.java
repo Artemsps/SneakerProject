@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Schuh {
 
-	private int schuhId;
+	private int schuhid;
 	private String marke;
 	private String modell;
 	private List<Double> groesse;
@@ -12,7 +12,7 @@ public class Schuh {
 	private double preis;
 
 	public Schuh(int schuhId, String marke, String modell, List<Double> groesse, int anzahl, double preis) {
-		this.schuhId = schuhId;
+		this.schuhid = schuhId;
 		this.marke = marke;
 		this.modell = modell;
 		this.anzahl = anzahl;
@@ -20,8 +20,8 @@ public class Schuh {
 		this.preis = preis;
 	}
 
-	public int getSchuhId() {
-		return schuhId;
+	public int getSchuhid() {
+		return schuhid;
 	}
 
 	public String getMarke() {
