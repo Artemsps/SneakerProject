@@ -36,6 +36,7 @@
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="starteTest.jsp">Test</a></li>
+						<li><a href="warenkorb.jsp">Warenkorb</a></li>
 						<li><a href="registrieren.jsp">Registrieren</a></li>
 						<li><a href="login.jsp">Login</a></li>
 						<li>

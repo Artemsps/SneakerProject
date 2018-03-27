@@ -7,30 +7,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.sneakerLove.database.DatabaseConnection;
-import de.sneakerLove.model.schuhe.Adidas;
-import de.sneakerLove.model.schuhe.Asics;
-import de.sneakerLove.model.schuhe.Nike;
+import de.sneakerLove.model.schuhe.Marke;
 import de.sneakerLove.model.schuhe.Schuh;
-import de.sneakerLove.model.schuhe.Timberland;
 
 public class SchuhUtil {
 	private static final String SELECT_ALL = "SELECT * FROM ";
+	private static final String MARKE = "marke";
 	private static final String MODELL = "modell";
 	private static final String GROESSE = "groesse";
 	private static final String ANZAHL = "anzahl";
 	private static final String PREIS = "preis";
 
-	public List<Schuh> getAlleSchuheVon(Marke marke) throws Exception {
+	public List<Schuh> getAlleSchuhe(Marke marke) throws Exception {
 		List<Schuh> schuhliste = new ArrayList<>();
+		List<Double> schuhgroesse = new ArrayList<>();
 
 		Connection myConn = null;
 		Statement myStmt = null;
 		ResultSet myRs = null;
-
-		String modell = null;
-		double groesse = 0.0;
-		int anzahl = 0;
-		double preis = 0.0;
 
 		try {
 			// Datenbankverbindung aufbauen
@@ -46,31 +40,15 @@ public class SchuhUtil {
 			while (myRs.next()) {
 
 				// dann die Daten von der Datenbank entnehmen
-				modell = myRs.getString(MODELL);
-				groesse = myRs.getDouble(GROESSE);
-				anzahl = myRs.getInt(ANZAHL);
-				preis = myRs.getDouble(PREIS);
+				int schuhid = myRs.getInt("schuhid");
+				String marke2 = myRs.getString(MARKE);
+				String modell = myRs.getString(MODELL);
+				double groesse = myRs.getDouble(GROESSE);
+				int anzahl = myRs.getInt(ANZAHL);
+				double preis = myRs.getDouble(PREIS);
 
-				switch (marke) {
-				case ADIDAS:
-					Adidas adidas = new Adidas(modell, groesse, anzahl, preis);
-					schuhliste.add(adidas);
-					break;
-				case ASICS:
-					Asics asics = new Asics(modell, groesse, anzahl, preis);
-					schuhliste.add(asics);
-					break;
-				case NIKE:
-					Nike nike = new Nike(modell, groesse, anzahl, preis);
-					schuhliste.add(nike);
-					break;
-				case TIMBERLAND:
-					Timberland timberland = new Timberland(modell, groesse, anzahl, preis);
-					schuhliste.add(timberland);
-					break;
-				default:
-					break;
-				}
+				Schuh schuh = new Schuh(schuhid, marke2, modell, schuhgroesse, anzahl, preis);
+				schuhliste.add(schuh);
 
 			}
 
@@ -95,23 +73,4 @@ public class SchuhUtil {
 			myRs.close();
 		}
 	}
-
-	public enum Marke {
-
-		ADIDAS("Adidas"),
-		ASICS("Asics"),
-		NIKE("Nike"),
-		TIMBERLAND("Timberland");
-
-		String marke;
-
-		Marke(String marke) {
-			this.marke = marke;
-		}
-
-		public String getMarke() {
-			return marke;
-		}
-	}
-
 }

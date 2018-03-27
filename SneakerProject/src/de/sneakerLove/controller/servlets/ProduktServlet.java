@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import de.sneakerLove.controller.util.SchuhUtil;
-import de.sneakerLove.controller.util.SchuhUtil.Marke;
+import de.sneakerLove.model.schuhe.Marke;
 import de.sneakerLove.model.schuhe.Schuh;
 
 /**
@@ -38,7 +38,7 @@ public class ProduktServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
-			List<Schuh> schuhliste = schuhUtil.getAlleSchuheVon(Marke.TIMBERLAND);
+			List<Schuh> schuhliste = schuhUtil.getAlleSchuhe(Marke.TIMBERLAND);
 			System.out.println(schuhliste.toString());
 			request.setAttribute("SCHUHLISTE", schuhliste);
 			request.getRequestDispatcher("index.jsp").forward(request, response);
